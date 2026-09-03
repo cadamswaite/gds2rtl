@@ -1,0 +1,4 @@
+.venv/
+formal*/
+*.vvp
+__pycache__/

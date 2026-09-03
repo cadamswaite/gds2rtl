@@ -1,0 +1,97 @@
+[tasks]
+# Find solution
+find_soln bmc
+
+# Find the 5 possible output strings
+find_star bmc
+find_tnt bmc
+find_es bmc
+find_bb bmc
+find_ta bmc
+
+# Find an ouput string not in the list above
+find_other bmc
+
+# Check the conditions we think are true always hold (bb='1, es='0 etc)
+check_conditions_match_output_text bmc
+
+
+# Find unreachable flops (flop that never change)
+# > rg -No -P "[^\s.]+_never_changed" formal_check_unr/FAIL | sort |uniq > all_toggles.log   
+# > rg -No -P "[^\s.]+_never_changed" generated/puzzle.v | sort |uniq > all_asserts.log   
+# diff all_toggles.log all_asserts.log  
+# > p_inky_cnt_7_never_changed
+
+check_unr no_waves
+
+#  In other runs, we assume !enable - but need to check this is ok to do (e.g. no easter eggs hiding sampling I when enable is low)
+#  To do this, generate assertions on each flop
+#  The only flops that change are related to setting the output/success flag etc:
+# > rg -No -P "[^\s.]+_never_changed" formal_check_enable_doesnt_matter/FAIL | sort |uniq
+# p_TNT_not_STAR_never_changed
+# p_output_bisty_flop0_never_changed
+# p_output_bisty_flop1_never_changed
+# p_output_bisty_flop2_never_changed
+# p_output_bisty_flop3_never_changed
+# p_output_bisty_flop4_never_changed
+# p_output_bisty_flop5_never_changed
+# p_output_bisty_flop6_never_changed
+# p_output_bisty_flop7_never_changed
+# p_outputting_cnt_0_never_changed
+# p_outputting_cnt_1_never_changed
+# p_outputting_cnt_2_never_changed
+# p_outputting_cnt_3_never_changed
+# p_outputting_latched_never_changed
+# p_success_never_changed
+
+check_enable_doesnt_matter no_waves
+
+
+[options]
+bmc:
+mode bmc
+depth 140
+--
+
+no_waves:
+mode bmc
+depth 150
+vcd off
+--
+
+[engines]
+#smtbmc  --keep-going bitwuzla
+#smtbmc  --syn bitwuzla
+#smtbmc  boolector
+
+# bmc: smtbmc   --syn yices
+bmc: btor btormc
+no_waves: smtbmc  --keep-going --syn yices
+
+#smtbmc yices
+#smtbmc  --syn z3
+#abc bmc3
+#btor btormc
+
+
+[script]
+check_conditions_match_output_text:      read -sv -formal -D FORMAL -D ASM_ENABLE -D FORMAL_GRID puzzle.v tb.sv
+find_soln:  read -sv -formal -D FORMAL -D FIND_SUCCESS  puzzle.v tb.sv
+find_star:  read -sv -formal -D FORMAL -D FIND_STAR  puzzle.v tb.sv
+find_tnt:   read -sv -formal -D FORMAL -D FIND_TNT  puzzle.v tb.sv
+find_es:    read -sv -formal -D FORMAL -D FIND_ES  puzzle.v tb.sv
+find_bb:    read -sv -formal -D FORMAL -D FIND_BB  puzzle.v tb.sv
+find_ta:    read -sv -formal -D FORMAL -D FIND_TA  puzzle.v tb.sv
+find_other: read -sv -formal -D FORMAL -D ASM_ENABLE -D FIND_OTHER  puzzle.v tb.sv
+
+check_enable_doesnt_matter:   read -sv -formal -D FORMAL  -D FORMAL_FLOPS_CHANGE_WHEN_ENABLES puzzle.v tb.sv
+check_unr:   read -sv -formal -D FORMAL  -D FORMAL_FLOPS_CHANGE puzzle.v tb.sv
+
+
+chformal -early
+opt_clean -purge
+prep -top tb
+
+[files]
+generated/puzzle.v
+tb/tb.sv

@@ -1,0 +1,76 @@
+input_gds: "warmup/inputs/04_final.gds"
+output_verilog: "warmup/generated/example.v"
+output_text_gds: "warmup/generated/sky130_text_layout.gds"
+partitions:
+  - coords: [[13, 13], [50, 50]]
+    name: "B Shift Reg"
+  - coords: [[13, 50], [50, 85]]
+    name: "A Shift Reg"
+  - coords: [[50, 10], [100, 42]]
+    name: "Sum"
+  - coords: [[66, 42], [78, 60]]
+    name: "Check eq 1F0"
+
+
+netnames:
+  - probe: [40.25, 49.81]
+    name: "clk2"
+  - probe: [39.33, 44.37]
+    name: "clk3_1"
+  - probe: [27.37, 64.43]
+    name: "clk3_2"
+
+  - probe: [38.865, 71.23]
+    name: "A_SH0"
+  - probe: [38.865, 65.79]
+    name: "A_SH1"
+  - probe: [38.865, 76.67]
+    name: "A_SH2"
+  - probe: [35.185, 70.21]
+    name: "A_SH3"
+  - probe: [35.185, 75.65]
+    name: "A_SH4"
+  - probe: [45.305, 70.21]
+    name: "A_SH5"
+  - probe: [45.305, 75.65]
+    name: "A_SH6"
+  - probe: [38.865, 60.35]
+    name: "A_SH7"
+
+  - probe: [38.865, 27.71]
+    name: "B_SH0"
+  - probe: [38.865, 33.15]
+    name: "B_SH1"
+  - probe: [35.185, 32.13]
+    name: "B_SH2"
+  - probe: [45.305, 32.13]
+    name: "B_SH3"
+  - probe: [38.865, 22.27]
+    name: "B_SH4"
+  - probe: [38.865, 38.59]
+    name: "B_SH5"
+  - probe: [26.915, 26.69]
+    name: "B_SH6"
+  - probe: [35.185, 37.57]
+    name: "B_SH7"
+
+
+  - probe: [67.85, 35.87]
+    name: "SUM0"
+  - probe: [75.71, 25.67]
+    name: "SUM1"
+  - probe: [75.67, 31.11]
+    name: "SUM2"
+  - probe: [80.73, 28.73]
+    name: "SUM3"
+  - probe: [74.29, 23.29]
+    name: "SUM4"
+    
+  - probe: [74.29, 34.17]
+    name: "SUM5"
+  - probe: [68.35, 28.73]
+    name: "SUM6"
+  - probe: [70.11, 20.23]
+    name: "SUM7"
+  - probe: [68.31, 31.11]
+    name: "SUM8"

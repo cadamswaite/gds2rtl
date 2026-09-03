@@ -1,0 +1,2 @@
+iverilog -o generated/warmup.vvp generated/example.v inputs/00_source.v tb/tb.sv
+vvp generated/warmup.vvp

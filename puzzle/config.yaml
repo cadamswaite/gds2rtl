@@ -1,0 +1,746 @@
+input_gds: "puzzle/inputs/puzzle.gds"
+output_verilog: "puzzle/generated/puzzle.v"
+output_text_gds: "puzzle/generated/sky130_text_layout.gds"
+partitions:
+  - coords: [[25,192],[46,210]]
+    name: "outputting, block further inputs"
+
+  - coords: [[20,136],[46,166]]
+    name: "Count Cols"
+
+  - coords: [[24,90],[47,115]]
+    name: "Count Rows"
+
+  - coords: [[101,176],[144,293]]
+    name: "count num in each col"
+
+  - coords: [[60,126],[104,170]]
+    name: "two in each col and tnt"
+
+  - coords: [[67,87],[101,115]]
+    name: "Two in each row"
+
+  - coords: [[64,14],[100,64]]
+    name: "combine errors"
+
+  - coords: [[160,262],[187,290]]
+    name: "success gen, tnt vs star"
+
+  - coords: [[104,42],[137,154]]
+    name: "two in each group"
+
+  - coords: [[140,72],[191,162]]
+    name: "Output logic non-star messages"
+    
+  - coords: [[140,162],[191,206]]
+    name: "Output logic starbist"
+
+  - coords: [[140,206],[191,262]]
+    name: "Output mux messages"
+    
+  - coords: [[146,8],[195,62]]
+    name: "row + col in -> group id"
+    
+
+
+netnames:
+
+  - probe: [113.39, 164.05]
+    name: "clk2"
+
+  - probe: [86.71, 77.35]
+    name: "clk3_1"
+  - probe: [98.21, 74.97]
+    name: "clk3_2"
+  - probe: [146.97, 178.33]
+    name: "clk3_3"
+  - probe: [77.51, 107.61]
+    name: "clk3_4"
+
+  - probe: [123.05, 85.85]
+    name: "clk3_5"
+  - probe: [60.95, 148.07]
+    name: "clk3_6"
+  - probe: [77.05, 151.13]
+    name: "clk3_7"
+  - probe: [123.97, 249.05]
+    name: "clk3_8"
+  - probe: [117.99, 251.43]
+    name: "clk3_8"
+  - probe: [150.65, 224.23]
+    name: "clk3_9"
+  - probe: [121.67, 91.29]
+    name: "clk3_10"
+  - probe: [105.11, 200.09]
+    name: "clk3_11"
+  - probe: [112.47, 205.53]
+    name: "clk3_12"
+  - probe: [161.23, 180.71]
+    name: "clk3_13"
+  - probe: [161.23, 227.29]
+    name: "clk3_14"
+
+  - probe: [85.79, 77.35]
+    name: "clk4_1"
+  - probe: [100.05, 71.91]
+    name: "clk4_2"
+  - probe: [148.81, 175.27]
+    name: "clk4_3"
+  - probe: [89.47, 109.99]
+    name: "clk4_4_1"
+  - probe: [72.91, 107.61]
+    name: "clk4_4_2"
+  - probe: [126.27, 85.85]
+    name: "clk4_5"
+  - probe: [60.03, 148.07]
+    name: "clk4_6"
+  - probe: [75.21, 142.63]
+    name: "clk4_7"
+  - probe: [117.07, 251.43]
+    name: "clk4_8_1"
+  - probe: [130.41, 249.05]
+    name: "clk4_8_2"
+  - probe: [128.57, 91.29]
+    name: "clk4_10"
+  - probe: [103.27, 197.03]
+    name: "clk4_11"
+  - probe: [109.71, 207.91]
+    name: "clk4_12"
+  - probe: [155.71, 178.33]
+    name: "clk4_13"
+  - probe: [157.09, 224.23]
+    name: "clk4_14"
+    
+    
+  - probe: [87.17, 113.05]
+    name: "clk5_4"
+
+  - probe: [35.185, 150.11]
+    name: "col_cnt_0"
+  - probe: [39.785, 149.09]
+    name: "col_cnt_1"
+  - probe: [26.915, 144.67]
+    name: "col_cnt_2"
+  - probe: [37.945, 159.97]
+    name: "col_cnt_3"
+
+  - probe: [32.895, 94.69]
+    name: "row_cnt_0"
+  - probe: [33.815, 105.57]
+    name: "row_cnt_1"
+  - probe: [37.945, 111.01]
+    name: "row_cnt_2"
+  - probe: [37.945, 100.13]
+    name: "row_cnt_3"
+
+  - probe: [166.29, 28.73]
+    name: "row_cnt_0_xor_rc1"
+
+  - probe: [27.375, 155.89]
+    name: "next_char_cnt_0"
+  - probe: [34.71, 153.85]
+    name: "next_char_cnt_1"
+  # - probe: [25.07, 147.39]
+  #   name: "next_char_cnt[2]"
+  - probe: [29.675, 162.01]
+    name: "next_char_cnt_3"
+  
+  - probe: [39.795, 102.51]
+    name: "next_row_cnt_1"
+  - probe: [32.89, 104.89]
+    name: "next_row_cnt_2"
+
+  - probe: [81.195, 106.93]
+    name: "n_first_col"
+
+  - probe: [86.245, 101.15]
+    name: "n_first_col_2"
+    
+
+  - probe: [166.655, 85.51]
+    name: "lo"
+    
+  - probe: [166.02, 85.83]
+    name: "hi"
+
+  - probe: [31.515, 94.35]
+    name: "last_row"
+  - probe: [33.835, 102.17]
+    name: "Nlast_row"
+  - probe: [30.565, 199.07]
+    name: "input_unmasked"
+  - probe: [24.615, 153.51]
+    name: "last_in_row"
+
+  - probe: [176.865, 285.09]
+    name: "outputting_latched"
+  - probe: [30.595, 203.49]
+    name: "outputting"
+  - probe: [31.055, 205.87]
+    name: "next_outputting"
+
+  - probe: [168.685, 249.73]
+    name: "outputting_cnt_0"
+  - probe: [169.605, 255.17]
+    name: "outputting_cnt_1"
+  - probe: [176.775, 250.75]
+    name: "outputting_cnt_2"
+  - probe: [175.855, 244.29]
+    name: "outputting_cnt_3"
+
+  - probe: [176.865, 248.71]
+    name: "outputting_cnt_lt_15"
+    
+    
+  - probe: [79.35, 26.01]
+    name: "two_in_each_group"
+  - probe: [80.265, 39.95]
+    name: "total_inky_cnt_22"
+
+  - probe: [110.145, 241.23]
+    name: "exact_two_used_col5"
+  - probe: [113.825, 219.47]
+    name: "exact_two_used_col3"
+  - probe: [123.945, 275.57]
+    name: "exact_two_used_col9"
+  - probe: [105.545, 284.75]
+    name: "exact_two_used_col10"
+  - probe: [110.605, 259.25]
+    name: "exact_two_used_col7"
+  - probe: [116.585, 248.37]
+    name: "exact_two_used_col6"
+  - probe: [116.585, 188.53]
+    name: "exact_two_used_col0"
+
+  - probe: [107.41, 208.93]
+    name: "exact_two_used_col1"
+  - probe: [111.09, 215.39]
+    name: "exact_two_used_col2"
+  - probe: [111.09, 237.15]
+    name: "exact_two_used_col4"
+  - probe: [106.49, 279.65]
+    name: "exact_two_used_col8"
+    
+  - probe: [77.51, 158.95]
+    name: "exact_two_in_each_col"
+    
+    
+
+
+  
+
+  - probe: [125.345, 187.17]
+    name: "used_col0"
+  - probe: [125.345, 219.81]
+    name: "used_col3"
+  - probe: [124.885, 241.57]
+    name: "used_col5"
+  - probe: [117.075, 247.01]
+    name: "used_col6"
+  - probe: [124.885, 257.89]
+    name: "used_col7"
+  - probe: [125.345, 279.65]
+    name: "used_col9"
+  - probe: [124.885, 285.09]
+    name: "used_col10"
+
+
+  - probe: [123.045, 182.75]
+    name: "two_used_col0"
+  - probe: [114.315, 204.51]
+    name: "two_used_col1"
+  - probe: [124.885, 209.95]
+    name: "two_used_col2"
+  - probe: [123.045, 215.39]
+    name: "two_used_col3"
+  - probe: [124.885, 230.69]
+    name: "two_used_col4"
+  - probe: [114.315, 237.15]
+    name: "two_used_col5"
+  - probe: [123.045, 242.59]
+    name: "two_used_col6"
+  - probe: [122.585, 258.91]
+    name: "two_used_col7"
+  - probe: [114.315, 275.23]
+    name: "two_used_col8"
+  - probe: [123.045, 274.21]
+    name: "two_used_col9"
+  - probe: [114.315, 286.11]
+    name: "two_used_col10"
+
+
+  - probe: [117.985, 191.93]
+    name: "n_trig_two_used_0"
+  - probe: [117.985, 221.51]
+    name: "n_trig_two_used_3"
+  - probe: [114.305, 235.45]
+    name: "n_trig_two_used_5"
+  - probe: [117.985, 254.15]
+    name: "n_trig_two_used_6"
+  - probe: [113.385, 257.21]
+    name: "n_trig_two_used_7"
+  - probe: [113.845, 278.97]
+    name: "n_trig_two_used_9"
+  - probe: [110.625, 286.79]
+    name: "n_trig_two_used_10"
+
+
+  - probe: [81.655, 54.91]
+    name: "inky_cnt_0"
+  - probe: [81.655, 38.59]
+    name: "inky_cnt_1"
+  - probe: [91.765, 44.03]
+    name: "inky_cnt_2"
+  - probe: [90.845, 49.47]
+    name: "inky_cnt_3"
+  - probe: [86.705, 37.57]
+    name: "inky_cnt_4"
+  - probe: [77.515, 43.01]
+    name: "inky_cnt_5"
+  - probe: [84.865, 48.45]
+    name: "inky_cnt_6"
+  - probe: [78.435, 59.33]
+    name: "inky_cnt_7"
+
+  - probe: [123.965, 83.81]
+    name: "grp_A1"
+  - probe: [123.965, 73.95]
+    name: "grp_A0"
+
+  - probe: [115.695, 139.23]
+    name: "grp_B0"
+  - probe: [118.915, 133.79]
+    name: "grp_B1"
+
+  - probe: [123.965, 51.17]
+    name: "grp_J0"
+  - probe: [127.185, 46.75]
+    name: "grp_J1"
+
+  - probe: [123.045, 122.91]
+    name: "grp_S0"
+  - probe: [124.885, 116.45]
+    name: "grp_S1"
+
+  - probe: [123.965, 149.09]
+    name: "grp_G0"
+  - probe: [118.915, 144.67]
+    name: "grp_G1"
+
+  - probe: [123.965, 100.13]
+    name: "grp_D0"
+  - probe: [132.245, 95.71]
+    name: "grp_D1"
+
+  - probe: [115.695, 111.01]
+    name: "grp_T0"
+  - probe: [118.915, 106.59]
+    name: "grp_T1"
+
+  - probe: [114.775, 138.21]
+    name: "grp_F0"
+  - probe: [115.695, 128.35]
+    name: "grp_F1"
+
+  - probe: [114.315, 95.71]
+    name: "grp_N0"
+  - probe: [124.885, 94.69]
+    name: "grp_N1"
+
+  - probe: [124.885, 78.37]
+    name: "grp_C0"
+  - probe: [114.315, 79.39]
+    name: "grp_C1"
+
+  - probe: [115.695, 72.93]
+    name: "grp_ST0"
+  - probe: [123.045, 63.07]
+    name: "grp_ST1"
+
+  - probe: [116.585, 150.45]
+    name: "two_in_grp_G"
+  - probe: [110.605, 139.57]
+    name: "two_in_grp_B"
+  - probe: [109.71, 100.13]
+    name: "two_in_grp_N"
+  - probe: [112.93, 83.81]
+    name: "two_in_grp_C"
+  - probe: [121.185, 101.49]
+    name: "two_in_grp_D"
+
+  - probe: [116.585, 112.37]
+    name: "two_in_grp_T"
+  - probe: [120.265, 121.55]
+    name: "two_in_grp_S"
+  - probe: [111.09, 128.35]
+    name: "two_in_grp_F"
+  - probe: [108.765, 78.03]
+    name: "two_in_grp_A"
+  - probe: [111.09, 63.07]
+    name: "two_in_grp_ST"
+  - probe: [121.185, 52.53]
+    name: "two_in_grp_J"
+
+
+  - probe: [89.925, 92.99]
+    name: "Merr_lat"
+
+  - probe: [76.59, 104.55]
+    name: "n_input_unmasked"
+
+
+  - probe: [88.085, 109.31]
+    name: "num_in_row_0"
+
+  - probe: [90.845, 98.43]
+    name: "num_in_row_1"
+
+  - probe: [79.81, 93.67]
+    name: "num_in_all_rows_2"
+    
+
+  
+
+  - probe: [113.385, 77.69]
+    name: "n_set_A1"
+
+  - probe: [116.155, 134.47]
+    name: "n_set_B1"
+  - probe: [117.535, 90.95]
+    name: "n_set_D1"
+  - probe: [117.065, 121.21]
+    name: "n_set_S1"
+  - probe: [115.685, 145.35]
+    name: "n_set_G1"
+  - probe: [117.985, 52.87]
+    name: "n_set_J1"
+  - probe: [115.685, 107.27]
+    name: "n_set_T1"
+
+  - probe: [120.315, 194.99]
+    name: "char_0"
+  - probe: [114.775, 200.77]
+    name: "n_char_1"
+  - probe: [119.365, 224.23]
+    name: "char_3"
+  - probe: [117.995, 235.11]
+    name: "char_5"
+  - probe: [121.675, 254.49]
+    name: "char_6"
+  - probe: [125.355, 254.83]
+    name: "char_7"
+  - probe: [114.775, 271.49]
+    name: "n_char_8"
+  - probe: [114.765, 284.07]
+    name: "char_9"
+  - probe: [127.655, 284.07]
+    name: "char_10"
+
+  - probe: [176.865, 226.61]
+    name: "out_char_0"
+  - probe: [170.885, 224.91]
+    name: "out_char_1" 
+  - probe: [173.195, 219.47]
+    name: "out_char_2"
+  - probe: [174.565, 224.91]
+    name: "out_char_3"
+
+  - probe: [171.805, 221.17]
+    name: "out_char_4"
+  - probe: [173.195, 221.17]
+    name: "out_char_5"
+  - probe: [178.715, 219.47]
+    name: "out_char_6"
+  - probe: [176.875, 215.73]
+    name: "out_char_7"
+
+
+
+
+  - probe: [82.575, 159.97]
+    name: "I_SHR0"
+  - probe: [86.705, 155.55]
+    name: "I_SHR1"
+  - probe: [85.785, 165.41]
+    name: "I_SHR2"
+  - probe: [78.435, 150.11]
+    name: "I_SHR3"
+  - probe: [83.945, 144.67]
+    name: "I_SHR4"
+  - probe: [77.515, 139.23]
+    name: "I_SHR5"
+  - probe: [76.135, 149.09]
+    name: "I_SHR6"
+  - probe: [78.435, 133.79]
+    name: "I_SHR7"
+  - probe: [82.575, 138.21]
+    name: "I_SHR8"
+  - probe: [91.765, 143.65]
+    name: "I_SHR9"
+  - probe: [94.065, 149.09]
+    name: "I_SHR10"
+  - probe: [93.145, 154.53]
+    name: "I_SHR11"
+
+
+  - probe: [175.03, 276.59]
+    name: "two_have_touched"
+  # - probe: [173.19, 271.15]
+  #   name: "M_alt_succ_cond2"
+  # - probe: [172.725, 278.29]
+  #   name: "M_alt_succ_cond3"
+
+
+  - probe: [176.865, 274.21]
+    name: "TNT_not_STAR"
+  - probe: [85.33, 146.03]
+    name: "two_never_touched"
+
+  - probe: [96.825, 150.11]
+    name: "two_touched_any_dir_lat"
+
+  - probe: [173.19, 271.15]
+    name: "succ_cond2"
+  - probe: [172.725, 278.29]
+    name: "succ_cond3"
+  - probe: [170.4, 282.03]
+    name: "succ_lat"
+
+  - probe: [81.625, 105.23]
+    name: "col_cnt_eq_5"
+  - probe: [83.925, 160.99]
+    name: "two_touch_left_right"
+
+  - probe: [89.93, 53.89]
+    name: "show_big_bang"
+  - probe: [89.47, 41.99]
+    name: "show_empty_sky"
+  - probe: [164.455, 214.03]
+    name: "show_try_again"
+
+  - probe: [168.615, 221.51]
+    name: "es_char_mask"
+
+  - probe: [169.485, 218.11]
+    name: "bb_char_mask"
+    
+  - probe: [168.59, 130.05]
+    name: "show_es_char0"
+  - probe: [170.435, 134.81]
+    name: "show_es_char1"
+  - probe: [175.005, 128.69]
+    name: "show_es_char2"
+  - probe: [171.355, 132.43]
+    name: "show_es_char3"
+
+  - probe: [171.345, 140.59]
+    name: "show_es_char4"
+  - probe: [169.965, 134.81]
+    name: "show_es_char5"
+  - probe: [174.575, 143.65]
+    name: "show_es_char6"
+
+
+  - probe: [174.105, 145.01]
+    name: "show_bb_char0"
+  - probe: [168.585, 149.09]
+    name: "show_bb_char1"
+  - probe: [171.345, 147.73]
+    name: "show_bb_char2"
+  - probe: [175.03, 153.85]
+    name: "show_bb_char3"
+
+  - probe: [175.03, 148.07]
+    name: "show_bb_char5"
+  - probe: [174.57, 157.25]
+    name: "show_bb_char6"
+
+  - probe: [171.81, 96.39]
+    name: "show_tnt_char0"
+  - probe: [173.655, 85.17]
+    name: "show_tnt_char1"
+  - probe: [170.43, 100.13]
+    name: "show_tnt_char2"
+  - probe: [173.69, 94.01]
+    name: "show_tnt_char3"
+  - probe: [173.655, 88.57]
+    name: "show_tnt_char4"
+  - probe: [173.655, 101.49]
+    name: "show_tnt_char5"
+  - probe: [171.795, 100.13]
+    name: "show_tnt_char6"
+
+
+  - probe: [172.715, 111.01]
+    name: "show_ta_char0"
+  - probe: [173.645, 106.59]
+    name: "show_ta_char1"
+  - probe: [171.805, 110.67]
+    name: "show_ta_char2"
+  - probe: [175.495, 117.47]
+    name: "show_ta_char3"
+
+  - probe: [171.79, 119.17]
+    name: "show_ta_char4"
+  - probe: [172.265, 115.09]
+    name: "show_ta_char5"
+  - probe: [180.09, 116.11]
+    name: "show_ta_char6"
+
+  - probe: [168.13, 208.59]
+    name: "show_ta_char_masked0"
+  - probe: [178.71, 208.59]
+    name: "show_ta_char_masked1"
+  - probe: [178.71, 210.29]
+    name: "show_ta_char_masked2"
+  - probe: [167.21, 215.73]
+    name: "show_ta_char_masked3"
+  - probe: [162.61, 210.29]
+    name: "show_ta_char_masked4"
+  - probe: [182.85, 214.03]
+    name: "show_ta_char_masked5"
+  - probe: [181.93, 215.73]
+    name: "show_ta_char_masked6"
+  - probe: [180.09, 214.03]
+    name: "show_ta_char_masked7"
+
+  - probe: [176.895, 230.35]
+    name: "show_bb_es_char0"
+  - probe: [167.185, 226.61]
+    name: "show_bb_es_char1"
+  - probe: [164.885, 224.91]
+    name: "show_bb_es_char2"
+  - probe: [173.215, 232.05]
+    name: "show_bb_es_char3"
+  - probe: [170.865, 226.61]
+    name: "show_bb_es_char4"
+  - probe: [173.215, 230.35]
+    name: "show_bb_es_char5"
+  - probe: [181.035, 224.91]
+    name: "show_bb_es_char6"
+  - probe: [179.195, 221.17]
+    name: "show_bb_es_char7"
+
+  - probe: [165.805, 214.03]
+    name: "show_tnt_or_star_char0"
+  - probe: [167.645, 210.29]
+    name: "show_tnt_or_star_char1"
+  - probe: [177.355, 210.29]
+    name: "show_tnt_or_star_char2"
+  - probe: [175.515, 215.73]
+    name: "show_tnt_or_star_char3"
+
+  - probe: [171.325, 210.29]
+    name: "show_tnt_or_star_char4"
+  - probe: [176.435, 214.03]
+    name: "show_tnt_or_star_char5"
+  - probe: [171.835, 208.59]
+    name: "show_tnt_or_star_char6"
+  - probe: [175.515, 208.59]
+    name: "show_tnt_or_star_char7"
+
+  - probe: [169.485, 217.09]
+    name: "op_show_tnt"
+  - probe: [171.835, 212.67]
+    name: "op_show_star"
+
+  - probe: [172.73, 258.91]
+    name: "output_chars_valid"
+
+
+  - probe: [170.93, 175.61]
+    name: "show_star_char0"
+  - probe: [164.49, 183.43]
+    name: "show_star_char1"
+  - probe: [178.67, 177.99]
+    name: "show_star_char2"
+  - probe: [173.19, 172.55]
+    name: "show_star_char3"
+
+  - probe: [160.31, 174.59]
+    name: "outputting_6_or_b"
+    
+  - probe: [178.25, 191.93]
+    name: "outputting_01234_8_a_e"
+  - probe: [160.31, 174.59]
+    name: "outputting_6_or_b"
+
+  - probe: [170.89, 183.43]
+    name: "show_star_char4"
+  - probe: [175.95, 202.81]
+    name: "show_star_char5"
+  - probe: [170.93, 194.31]
+    name: "show_star_char6"
+  - probe: [172.77, 172.55]
+    name: "show_star_char7"
+    
+
+  - probe: [181.94, 200.77]
+    name: "output_bisty_flop0"
+  - probe: [177.785, 179.01]
+    name: "output_bisty_flop6"
+  - probe: [183.765, 184.45]
+    name: "output_bisty_flop4"
+  - probe: [168.58, 180.03]
+    name: "output_bisty_flop7"
+  - probe: [175.96, 189.89]
+    name: "output_bisty_flop5"
+  - probe: [174.575, 195.33]
+    name: "output_bisty_flop3"
+
+
+  - probe: [176.865, 196.35]
+    name: "output_bisty_flop1"
+
+  - probe: [176.88, 190.91]
+    name: "output_bisty_flop2"
+# 
+
+  # - probe: [183.765, 184.45]
+    # name: "output_bisty_flop10"
+  # - probe: [176.865, 196.35]
+    # name: "output_bisty_flop11"
+  # - probe: [174.575, 195.33]
+    # name: "output_bisty_flop13"
+  # - probe: [176.88, 190.91]
+    # name: "output_bisty_flop14"
+  # - probe: [168.58, 180.03]
+    # name: "output_bisty_flop15"
+    
+  - probe: [166.745, 48.11]
+    name: "group_select0"
+  - probe: [184.695, 42.67]
+    name: "group_select1"
+  - probe: [173.185, 53.55]
+    name: "group_select2"
+  - probe: [171.345, 49.81]
+    name: "group_select3"
+
+  - probe: [116.125, 58.99]
+    name: "curr_cell_is_group_J"
+  - probe: [118.905, 125.97]
+    name: "curr_cell_is_group_S"
+  - probe: [121.665, 69.53]
+    name: "curr_cell_is_group_A"
+  - probe: [117.075, 131.41]
+    name: "curr_cell_is_group_B"
+
+  - probe: [117.075, 87.89]
+    name: "curr_cell_is_group_D"
+  - probe: [117.075, 142.29]
+    name: "curr_cell_is_group_G"
+  - probe: [117.075, 102.51]
+    name: "curr_cell_is_group_T"
+    
+  - probe: [123.045, 141.95]
+    name: "curr_cell_isn_group_F"
+  - probe: [117.525, 86.53]
+    name: "curr_cell_isn_group_N"
+  - probe: [112.475, 71.23]
+    name: "curr_cell_isn_group_C"
+  - probe: [120.745, 60.35]
+    name: "curr_cell_isn_group_ST"
+
+
+  - probe: [176.87, 41.99]
+    name: "cols_6_to_10"

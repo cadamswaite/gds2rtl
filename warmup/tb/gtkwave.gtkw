@@ -1,0 +1,105 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (7d7b4db) (w)1999-2022 BSI
+[*] Thu Sep  3 19:03:49 2026
+[*]
+[dumpfile] "/Users/carl/Git/gds_to_rtl2/warmup/generated/sim.vcd"
+[dumpfile_mtime] "Thu Sep  3 19:00:26 2026"
+[dumpfile_size] 6512
+[savefile] "/Users/carl/Git/gds_to_rtl2/warmup/generated/gtkwave.gtkw"
+[timestart] 0
+[size] 1333 600
+[pos] -1 -1
+*-5.616672 140 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb.
+[sst_width] 255
+[signals_width] 173
+[sst_expanded] 1
+[sst_vpaned_height] 159
+@200
+-IO
+@28
+tb.A
+tb.B
+tb.clk
+tb.en
+tb.rst_n
+@200
+-Real State
+@22
+tb.real_i.a_reg[7:0]
+tb.real_i.b_reg[7:0]
+tb.real_i.sum[8:0]
+@28
+tb.S_real
+@200
+-Generated State
+@c00022
+#{tb.generated.A_SH[7:0]} tb.generated.A_SH7 tb.generated.A_SH6 tb.generated.A_SH5 tb.generated.A_SH4 tb.generated.A_SH3 tb.generated.A_SH2 tb.generated.A_SH1 tb.generated.A_SH0
+@28
+tb.generated.A_SH0
+tb.generated.A_SH1
+tb.generated.A_SH2
+tb.generated.A_SH3
+tb.generated.A_SH4
+tb.generated.A_SH5
+tb.generated.A_SH6
+tb.generated.A_SH7
+@1401200
+-group_end
+@c00022
+#{B_SH[7:0]} tb.generated.B_SH7 tb.generated.B_SH6 tb.generated.B_SH5 tb.generated.B_SH4 tb.generated.B_SH3 tb.generated.B_SH2 tb.generated.B_SH1 tb.generated.B_SH0
+@28
+tb.generated.B_SH0
+tb.generated.B_SH1
+tb.generated.B_SH2
+tb.generated.B_SH3
+tb.generated.B_SH4
+tb.generated.B_SH5
+tb.generated.B_SH6
+tb.generated.B_SH7
+@1401200
+-group_end
+@c00022
+#{SUM} tb.generated.SUM8 tb.generated.SUM7 tb.generated.SUM6 tb.generated.SUM5 tb.generated.SUM4 tb.generated.SUM3 tb.generated.SUM2 tb.generated.SUM1 tb.generated.SUM0
+@28
+tb.generated.SUM0
+tb.generated.SUM1
+tb.generated.SUM2
+tb.generated.SUM3
+tb.generated.SUM4
+tb.generated.SUM5
+tb.generated.SUM6
+tb.generated.SUM7
+tb.generated.SUM8
+@1401200
+-group_end
+@29
+tb.S_generated
+[pattern_trace] 1
+[pattern_trace] 0

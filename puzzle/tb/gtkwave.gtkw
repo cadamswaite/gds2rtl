@@ -1,0 +1,276 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (7d7b4db) (w)1999-2022 BSI
+[*]
+[dumpfile_size] 82402
+[savefile] "/Users/carl/Git/gds_to_rtl2/puzzle/tb/gtkwave.gtkw"
+[timestart] 997
+[size] 1333 600
+[pos] -1 -1
+*-6.000000 7805 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb.
+[sst_width] 255
+[signals_width] 193
+[sst_expanded] 1
+[sst_vpaned_height] 159
+@200
+-IO
+@28
+tb.I
+@821
+tb.O[7:0]
+@28
+tb.clk
+tb.enable
+tb.rst_n
+tb.success
+@200
+-Internal Signals
+@c00022
+#{group_id} tb.d1.group_select3 tb.d1.group_select2 tb.d1.group_select1 tb.d1.group_select0
+@28
+tb.d1.group_select0
+tb.d1.group_select1
+tb.d1.group_select2
+tb.d1.group_select3
+@1401200
+-group_end
+@c00024
+#{col_cnrt} tb.d1.col_cnt_3 tb.d1.col_cnt_2 tb.d1.col_cnt_1 tb.d1.col_cnt_0
+@28
+tb.d1.col_cnt_0
+tb.d1.col_cnt_1
+tb.d1.col_cnt_2
+tb.d1.col_cnt_3
+@1401200
+-group_end
+@c00024
+#{row_cnt} tb.d1.row_cnt_3 tb.d1.row_cnt_2 tb.d1.row_cnt_1 tb.d1.row_cnt_0
+@28
+tb.d1.row_cnt_0
+tb.d1.row_cnt_1
+tb.d1.row_cnt_2
+tb.d1.row_cnt_3
+@1401200
+-group_end
+@c00024
+#{tb.d1.num_in_row_[1:0]} tb.d1.num_in_row_1 tb.d1.num_in_row_0
+@28
+tb.d1.num_in_row_0
+tb.d1.num_in_row_1
+@1401200
+-group_end
+@c00024
+#{tb.d1.inky_cnt_[7:0]} tb.d1.inky_cnt_7 tb.d1.inky_cnt_6 tb.d1.inky_cnt_5 tb.d1.inky_cnt_4 tb.d1.inky_cnt_3 tb.d1.inky_cnt_2 tb.d1.inky_cnt_1 tb.d1.inky_cnt_0
+@28
+tb.d1.inky_cnt_0
+tb.d1.inky_cnt_1
+tb.d1.inky_cnt_2
+tb.d1.inky_cnt_3
+tb.d1.inky_cnt_4
+tb.d1.inky_cnt_5
+tb.d1.inky_cnt_6
+tb.d1.inky_cnt_7
+@1401200
+-group_end
+@c00200
+-Group Counts
+@c00028
+#{grp_A} tb.d1.grp_A1 tb.d1.grp_A0
+@28
+tb.d1.grp_A0
+tb.d1.grp_A1
+@1401200
+-group_end
+@c00024
++{grp_B} #{<Vector>} tb.d1.grp_B1 tb.d1.grp_B0
+@28
+tb.d1.grp_B0
+tb.d1.grp_B1
+@1401200
+-group_end
+@c00024
+#{grp_C} tb.d1.grp_C1 tb.d1.grp_C0
+@28
+tb.d1.grp_C1
+tb.d1.grp_C0
+@1401200
+-group_end
+@c00024
+#{grp_D} tb.d1.grp_D1 tb.d1.grp_D0
+@28
+tb.d1.grp_D1
+tb.d1.grp_D0
+@1401200
+-group_end
+@c00024
+#{grp_J} tb.d1.grp_J1 tb.d1.grp_J0
+@28
+tb.d1.grp_J1
+tb.d1.grp_J0
+@1401200
+-group_end
+@c00024
+#{grp_F} tb.d1.grp_F1 tb.d1.grp_F0
+@28
+tb.d1.grp_F1
+tb.d1.grp_F0
+@1401200
+-group_end
+@c00024
+#{grp_S} tb.d1.grp_S1 tb.d1.grp_S0
+@28
+tb.d1.grp_S1
+tb.d1.grp_S0
+@1401200
+-group_end
+@c00024
+#{grp_G} tb.d1.grp_G1 tb.d1.grp_G0
+@28
+tb.d1.grp_G1
+tb.d1.grp_G0
+@1401200
+-group_end
+@c00024
+#{grp_ST} tb.d1.grp_ST1 tb.d1.grp_ST0
+@28
+tb.d1.grp_ST1
+tb.d1.grp_ST0
+@1401200
+-group_end
+@c00024
+#{grp_N} tb.d1.grp_N1 tb.d1.grp_N0
+@28
+tb.d1.grp_N1
+tb.d1.grp_N0
+@1401200
+-group_end
+-Group Counts
+@200
+-Needed to win
+@28
+tb.d1.num_in_all_rows_2
+tb.d1.total_inky_cnt_22
+@c00200
+-two in each col
+@28
+tb.d1.exact_two_used_col0
+tb.d1.exact_two_used_col1
+tb.d1.exact_two_used_col2
+tb.d1.exact_two_used_col3
+tb.d1.exact_two_used_col4
+tb.d1.exact_two_used_col5
+tb.d1.exact_two_used_col6
+tb.d1.exact_two_used_col7
+tb.d1.exact_two_used_col8
+tb.d1.exact_two_used_col9
+tb.d1.exact_two_used_col10
+@1401200
+-two in each col
+@c00200
+-Two in each group
+@28
+tb.d1.two_in_grp_A
+tb.d1.two_in_grp_B
+tb.d1.two_in_grp_C
+tb.d1.two_in_grp_D
+tb.d1.two_in_grp_F
+tb.d1.two_in_grp_G
+tb.d1.two_in_grp_J
+tb.d1.two_in_grp_N
+tb.d1.two_in_grp_S
+tb.d1.two_in_grp_ST
+tb.d1.two_in_grp_T
+@1401200
+-Two in each group
+@200
+-Outputting
+@c00022
+#{outputting_cnt_[3:0]} tb.d1.outputting_cnt_3 tb.d1.outputting_cnt_2 tb.d1.outputting_cnt_1 tb.d1.outputting_cnt_0
+@28
+tb.d1.outputting_cnt_0
+tb.d1.outputting_cnt_1
+tb.d1.outputting_cnt_2
+tb.d1.outputting_cnt_3
+@1401200
+-group_end
+@28
+tb.d1.outputting_cnt_lt_15
+tb.d1.outputting_latched
+tb.d1.TNT_not_STAR
+@c00820
+#{show_bb_char} tb.d1.show_bb_char6 tb.d1.show_bb_char5 tb.d1.lo tb.d1.show_bb_char3 tb.d1.show_bb_char2 tb.d1.show_bb_char1 tb.d1.show_bb_char0
+@28
+tb.d1.show_bb_char0
+tb.d1.show_bb_char1
+tb.d1.show_bb_char2
+tb.d1.show_bb_char3
+tb.d1.lo
+tb.d1.show_bb_char5
+tb.d1.show_bb_char6
+@1401200
+-group_end
+@c00820
+#{show_es_char} tb.d1.show_es_char6 tb.d1.show_es_char5 tb.d1.show_es_char4 tb.d1.show_es_char3 tb.d1.show_es_char2 tb.d1.show_es_char1 tb.d1.show_es_char0
+@28
+tb.d1.show_es_char0
+tb.d1.show_es_char1
+tb.d1.show_es_char2
+tb.d1.show_es_char3
+tb.d1.show_es_char4
+tb.d1.show_es_char5
+tb.d1.show_es_char6
+@1401200
+-group_end
+@c00820
+#{show_star_char[7:0]} tb.d1.show_star_char7 tb.d1.show_star_char6 tb.d1.show_star_char5 tb.d1.show_star_char4 tb.d1.show_star_char3 tb.d1.show_star_char2 tb.d1.show_star_char1 tb.d1.show_star_char0
+@28
+tb.d1.show_star_char0
+tb.d1.show_star_char1
+tb.d1.show_star_char2
+tb.d1.show_star_char3
+tb.d1.show_star_char4
+tb.d1.show_star_char5
+tb.d1.show_star_char6
+tb.d1.show_star_char7
+@1401200
+-group_end
+@c00820
+#{tb.d1.show_ta_char[6:0]} tb.d1.show_ta_char6 tb.d1.show_ta_char5 tb.d1.show_ta_char4 tb.d1.show_ta_char3 tb.d1.show_ta_char2 tb.d1.show_ta_char1 tb.d1.show_ta_char0
+@28
+tb.d1.show_ta_char0
+tb.d1.show_ta_char1
+tb.d1.show_ta_char2
+tb.d1.show_ta_char3
+tb.d1.show_ta_char4
+tb.d1.show_ta_char5
+tb.d1.show_ta_char6
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

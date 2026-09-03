@@ -1,0 +1,34 @@
+[tasks]
+bounded_equiv bmc no_find_s
+bounded_find_soln bmc find_s
+prove_equiv proof no_find_s
+
+[options]
+bmc:
+mode bmc
+depth 50
+--
+proof:
+mode prove
+--
+[engines]
+bmc:
+smtbmc  boolector
+#smtbmc  yices
+#smtbmc  z3
+--
+proof:
+abc pdr
+--
+
+[script]
+no_find_s: read  -sv -formal example.v 00_source.v tb.sv
+find_s: read  -sv -D FIND_S -formal example.v 00_source.v tb.sv
+
+chformal -early
+prep -top tb
+
+[files]
+generated/example.v
+inputs/00_source.v
+tb/tb.sv

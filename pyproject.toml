@@ -1,0 +1,16 @@
+[project]
+name = "gsd-to-rtl"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "cadamswaite", email = "cadamswaite@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "gdsfactory>=9.40.2",
+    "shapely>=2.1.2",
+    "sky130>=1.0.0",
+    "vcdvcd>=2.6.0",
+]
+

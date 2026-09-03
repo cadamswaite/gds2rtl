@@ -1,0 +1,2 @@
+iverilog -o generated/puzzle.vvp generated/puzzle.v tb/tb.sv
+vvp generated/puzzle.vvp
